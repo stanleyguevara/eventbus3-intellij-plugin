@@ -31,7 +31,8 @@ import java.util.List;
  */
 public class EventBus3LineMarkerProvider implements LineMarkerProvider {
 
-    public static final Icon ICON = IconLoader.getIcon("/icons/icon.png");
+    public static final Icon ICON_GREEN = IconLoader.getIcon("/icons/icon_green.png");
+    public static final Icon ICON_YELLOW = IconLoader.getIcon("/icons/icon_yellow.png");
 
     public static final int MAX_USAGES = 100;
 
@@ -80,11 +81,11 @@ public class EventBus3LineMarkerProvider implements LineMarkerProvider {
     @Override
     public LineMarkerInfo getLineMarkerInfo(@NotNull PsiElement psiElement) {
         if (PsiUtils.isEventBusPost(psiElement)) {
-            return new LineMarkerInfo<PsiElement>(psiElement, psiElement.getTextRange(), ICON,
+            return new LineMarkerInfo<PsiElement>(psiElement, psiElement.getTextRange(), ICON_GREEN,
                     Pass.UPDATE_ALL, null, SHOW_RECEIVERS,
                     GutterIconRenderer.Alignment.LEFT);
         } else if (PsiUtils.isEventBusReceiver(psiElement)) {
-            return new LineMarkerInfo<PsiElement>(psiElement, psiElement.getTextRange(), ICON,
+            return new LineMarkerInfo<PsiElement>(psiElement, psiElement.getTextRange(), ICON_YELLOW,
                     Pass.UPDATE_ALL, null, SHOW_SENDERS,
                     GutterIconRenderer.Alignment.LEFT);
         }
