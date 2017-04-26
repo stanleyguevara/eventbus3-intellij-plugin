@@ -44,10 +44,17 @@ public class EventBus3LineMarkerProvider implements LineMarkerProvider {
                         JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
                         PsiClass eventBusClass = javaPsiFacade.findClass("org.greenrobot.eventbus.EventBus", GlobalSearchScope.allScope(project));
                         //PsiClass eventBusClass = javaPsiFacade.findClass("org.greenrobot.eventbus.EventBus", GlobalSearchScope.projectScope(project));
-                        PsiMethod postMethod = eventBusClass.findMethodsByName("post", false)[0];
-                        PsiMethod method = (PsiMethod) psiElement;
-                        PsiClass eventClass = ((PsiClassType) method.getParameterList().getParameters()[0].getTypeElement().getType()).resolve();
-                        new ShowUsagesAction(new SenderFilter(eventClass)).startFindUsages(postMethod, new RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES);
+                        if (e.getButton() == MouseEvent.BUTTON1) {
+                            PsiMethod postMethod = eventBusClass.findMethodsByName("post", false)[0];
+                            PsiMethod method = (PsiMethod) psiElement;
+                            PsiClass eventClass = ((PsiClassType) method.getParameterList().getParameters()[0].getTypeElement().getType()).resolve();
+                            new ShowUsagesAction(new SenderFilter(eventClass)).startFindUsages(postMethod, new RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES);
+                        } else if (e.getButton() == MouseEvent.BUTTON3) {
+                            PsiMethod postStickyMethod = eventBusClass.findMethodsByName("postSticky", false)[0];
+                            PsiMethod methodSticky = (PsiMethod) psiElement;
+                            PsiClass eventClassSticky = ((PsiClassType) methodSticky.getParameterList().getParameters()[0].getTypeElement().getType()).resolve();
+                            new ShowUsagesAction(new SenderFilter(eventClassSticky)).startFindUsages(postStickyMethod, new RelativePoint(e), PsiUtilBase.findEditor(psiElement), MAX_USAGES);
+                        }
                     }
                 }
             };

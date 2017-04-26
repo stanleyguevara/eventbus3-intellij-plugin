@@ -34,7 +34,7 @@ public class PsiUtils {
             if (method != null) {
                 String name = method.getName();
                 PsiElement parent = method.getParent();
-                if (name != null && name.equals("post") && parent instanceof PsiClass) {
+                if (name != null && (name.equals("post") || name.equals("postSticky")) && parent instanceof PsiClass) {
                     PsiClass implClass = (PsiClass) parent;
                     if (isEventBusClass(implClass) || isSuperClassEventBus(implClass)) {
                         return true;
