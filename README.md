@@ -2,27 +2,11 @@
 
 Plugin to navigate between events posted by [EventBus](https://github.com/greenrobot/EventBus).
 
-[中文说明](./README-zh.md)
+This is a fork of unmaintained repo, adding tracking `postSticky` methods.
 
-## Change Log
+To track `postSticky` right-click the orange Android icon.
 
-### 2016-09-07
-- add build version
-- modify `plugin id` , so that I can upload new version in https://plugins.jetbrains.com/
-- fix `plugin.xml` to enable to install in Android Studio'Plugins Online
-
-### 2016-09-05
-Originator did not reply our's issue,I try to let it work
-
-- Fix for EventBus3 new package name
-- Fix a class that don't exist in the last `intellij plugin SDK`
-- Add some `try-catch` , So it don't shutdown
-
-----
-
-
-
-### `Post` to `@Subscribe` and `@Subscribe` to `Post`
+To track ordinary `post` just left-click the icon.
 
 ![](https://raw.githubusercontent.com/kgmyshin/eventbus3-intellij-plugin/master/art/cap.gif)
 
@@ -34,10 +18,6 @@ There are two ways.
 - Preference -> Plugins -> Browse `EventBus` -> Select `EventBus3 Intellij Plugin` -> push Install plugin Btn.
 
 - [Download](https://github.com/likfe/eventbus3-intellij-plugin/raw/master/eventbus3-intellij-plugin.jar) the plugin jar and select "Install Plugin From Disk" in IntelliJ's plugin preferences.
-
-## Issues
-
-- [Unsupported major.minor version 52.0](https://github.com/likfe/eventbus3-intellij-plugin/issues/1)
 
 
 ## License 
