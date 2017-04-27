@@ -24,7 +24,7 @@ public class SenderFilter implements Filter {
         this.eventClass = eventClass;
     }
 
-    private static final Icon ICON = IconLoader.getIcon("/icons/icon.png");
+    private static final Icon ICON = IconLoader.getIcon("/icons/icon_green.png");
 
     @Override
     public boolean shouldShow(Usage usage) {
