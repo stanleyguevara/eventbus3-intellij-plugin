@@ -13,11 +13,11 @@ To track ordinary `post` just left-click the icon.
 
 ## Download & Install
 
-There are two ways.
+~~There are two ways.~~
 
-- Preference -> Plugins -> Browse `EventBus` -> Select `EventBus3 Intellij Plugin` -> push Install plugin Btn.
+- ~~Preference -> Plugins -> Browse `EventBus` -> Select `EventBus3 Intellij Plugin` -> push Install plugin Btn.~~
 
-- [Download](https://github.com/likfe/eventbus3-intellij-plugin/raw/master/eventbus3-intellij-plugin.jar) the plugin jar and select "Install Plugin From Disk" in IntelliJ's plugin preferences.
+- [Download](https://github.com/stanleyguevara/eventbus3-intellij-plugin/raw/master/eventbus3-intellij-plugin.jar) the plugin jar and select `Install plugin from disk...` in IntelliJ's plugin preferences.
 
 
 ## License 
